@@ -1,0 +1,101 @@
+.fondo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.alerta {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px 30px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  width: 80%;
+  max-width: 400px;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: zoomIn 0.3s forwards; /* Animación al aparecer */
+}
+
+.alerta.error {
+  color: white;
+  background-color: red;
+}
+
+.alerta.success {
+  border-left: 8px solid #2ecc71;
+  color: #27ae60;
+}
+
+.alerta.info {
+  border-left: 8px solid #3498db;
+  color: #2980b9;
+}
+
+.alerta .icono {
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.alerta .mensaje {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.alerta button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alerta button:hover {
+  background-color: #2980b9;
+}
+.alerta.error button {
+  padding: 10px 20px;
+  background-color: rgb(255, 3, 3);
+  color: white;
+  border: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alerta.error button:hover {
+  background-color: rgb(255, 99, 99);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.icono {
+  font-size: 40px; /* Tamaño del icono */
+  margin-bottom: 15px;
+}
+
+.icono-img {
+  width: 200px; /* Tamaño de la imagen */
+  height: 50px;
+  object-fit: contain; /* Ajusta la imagen para que no se distorsione */
+}
