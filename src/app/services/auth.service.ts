@@ -18,11 +18,22 @@ export class AuthService {
       environment.SUPABASE_KEY
     );
   }
+  async currentUser() {
+    const { data, error } = await this.supabaseClient.auth.getUser();
+
+    if (error) {
+      console.error('Error al obtener el usuario:', error.message);
+      return null;
+    }
+
+    console.log('Usuario actual:', data.user);
+    return data.user;
+  }
 
   logIn(credential: SignInWithPasswordCredentials) {
     return this.supabaseClient.auth.signInWithPassword(credential);
   }
-  singOut() {
+  signOut() {
     return this.supabaseClient.auth.signOut();
   }
 }

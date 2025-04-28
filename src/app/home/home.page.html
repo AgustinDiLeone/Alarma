@@ -1,3 +1,23 @@
-<button id="alarmButton" (click)="activarAlarma()" class="full-screen-btn">
-  {{ alarmState ? 'Desactivar Alarma' : 'Activar Alarma' }}
-</button>
+<ion-content [fullscreen]="true" class="background">
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button
+      *ngIf="!alarmActivated"
+      (click)="logoutUser()"
+      color="danger"
+      size="large"
+    >
+      <img src="/assets/salir.webp" />
+    </ion-fab-button>
+  </ion-fab>
+
+  <button
+    class="btnImage"
+    *ngIf="alarmActivated"
+    (click)="desactivarAlarma(false)"
+  ></button>
+  <button
+    class="btnImageAbierto"
+    *ngIf="!alarmActivated"
+    (click)="activarAlarma()"
+  ></button>
+</ion-content>

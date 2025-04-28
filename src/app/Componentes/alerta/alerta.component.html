@@ -3,12 +3,13 @@
     <div class="icono">
       <!-- Diferentes iconos según el tipo de alerta -->
       <ng-container *ngIf="tipo === 'error'">
-        <img src="assets/incorrecto-alert.png" alt="Error" class="icono-img" />
+        <img src="assets/alert/incorrecto.png" alt="Error" class="icono-img" />
       </ng-container>
-      <ng-container *ngIf="tipo === 'success'"> ✅ </ng-container>
+      <ng-container *ngIf="tipo === 'success'">
+        <img src="assets/alert/excelente.png" alt="success" class="icono-img" />
+      </ng-container>
       <ng-container *ngIf="tipo === 'info'"> ℹ️ </ng-container>
     </div>
     <div class="mensaje">{{ mensaje }}</div>
-    <button (click)="cerrar()">Cerrar</button>
   </div>
 </div>

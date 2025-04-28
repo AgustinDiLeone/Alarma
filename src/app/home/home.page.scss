@@ -1,5 +1,52 @@
-.full-screen-btn {
+ion-content {
+  --background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btnImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
-  font-size: 2rem;
+  background-image: url("../../assets/candado-cerrado.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+}
+.btnImageAbierto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/candado-Abierto.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
 }

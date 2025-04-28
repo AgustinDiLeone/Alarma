@@ -7,7 +7,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AlertaComponent } from 'src/app/Componentes/alerta/alerta.component';
 import { AlertaService } from 'src/app/services/alerta.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { SpinnerService } from 'src/app/services/spinner.service';
@@ -44,6 +43,7 @@ export class LoginComponent implements OnInit {
         const authResponse = await this.authServise.logIn({ email, password });
         if (authResponse.error) throw authResponse.error;
         this.spinner.mostrar();
+        this.form.reset();
         this.util.routerLink('/home');
       } catch (error) {
         console.log(error);
